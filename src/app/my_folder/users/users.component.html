@@ -1,0 +1,21 @@
+<p>
+  users works!
+</p>
+<ul>
+  <li *ngFor="let smurf of smurfs">
+<md-list>
+  <md-list-item>
+    <md-card>{{smurf.name}} {{smurf.age}}</md-card>
+  </md-list-item>
+</md-list>
+  </li>
+</ul>
+  <md-input-container>
+    <input title="Wat" mdInput placeholder="User name" value="" [(ngModel)]="smurfName">
+  </md-input-container>
+<md-input-container>
+  <input title="Wat" mdInput placeholder="User age" value="" [(ngModel)]="smurfAge">
+</md-input-container>
+<button (click)="add(smurfName, smurfAge); smurfName.value=''; smurfAge.value='';">
+  Add {{smurfName}} {{smurfAge}}
+</button>
